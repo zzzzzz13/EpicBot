@@ -106,7 +106,7 @@ async def get_commands_list(ctx: commands.Context, mapping) -> discord.Embed:
                 inline=False
             )
     embed.add_field(name="Links:", value=f"""
-[Dashboard]({WEBSITE_LINK}) | [Support]({SUPPORT_SERVER_LINK}) | [Invite]({WEBSITE_LINK}/invite) | [GitHub](https://github.com/Nirlep5252/EpicBot)
+[Dashboard]({WEBSITE_LINK}) | [Support]({SUPPORT_SERVER_LINK}) | [Invite]({WEBSITE_LINK}/invite) 
     """, inline=False)
 
     return embed
