@@ -64,7 +64,7 @@ Database : {round((db_time2-db_time1)*1000)}ms
     @commands.command(category="misc", help="Invite EpicBot to your amazing server!")
     async def invite(self, ctx):
         await ctx.message.reply(embed=discord.Embed(
-            title="Invite EpicBot \💖",
+            title="Invite me :D \💖",
             description="Thank you so much!",
             color=MAIN_COLOR,
             url=f"https://discord.com/oauth2/authorize?client_id={self.client.user.id}&permissions=8&scope=bot%20applications.commands"
@@ -74,7 +74,7 @@ Database : {round((db_time2-db_time1)*1000)}ms
     @commands.command(category="misc", help="Vote EpicBot to gain perks!")
     async def vote(self, ctx):
         await ctx.message.reply(embed=discord.Embed(
-            title="Vote EpicBot \💖",
+            title="Vote me :D \💖",
             description=f"""
 You can vote for me on these links:
 
@@ -111,7 +111,7 @@ You can vote for me on these links:
             color=MAIN_COLOR
         ).set_thumbnail(url=self.client.user.display_avatar.url).add_field(
             name="Owner",
-            value="- [`Nirlep_5252_`](https://github.com/Nirlep5252)",
+            value="- [`JovinplayZ`](https://dsc.gg/cheems-invite)",
             inline=False
         ).add_field(
             name="Contributors",
@@ -119,9 +119,7 @@ You can vote for me on these links:
             inline=False
         ).add_field(
             name="Other Credits",
-            value="""
-- [`Tech-Struck`](https://github.com/TechStruck/TechStruck-Bot) - Run command
-- [`Hexbot`](https://github.com/1Prototype1/HexBot) - Game commands
+            value=""" [Reef] (https://dsc.gg/cheems-invite) - helper ❤️‍🔥
             """,
             inline=False
         ).set_footer(text="They are amazing 💖"))
