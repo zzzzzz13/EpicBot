@@ -103,7 +103,7 @@ class Music(commands.Cog, description="Jam to some awesome tunes! 🎶"):
         await ctx.voice_client.disconnect()
         await ctx.message.add_reaction('👋')
 
-    @commands.command(help="V I B E and play epik music!!!", aliases=['p'])
+    @commands.command(help="PEACE ✌🏻", aliases=['p'])
     @commands.cooldown(3, 10, commands.BucketType.user)
     async def play(self, ctx, *, song_=None):
         if song_ is None:
