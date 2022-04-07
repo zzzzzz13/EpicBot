@@ -152,7 +152,7 @@ class user(commands.Cog, description="Commands related to the user!"):
         embed.set_thumbnail(url=self.client.user.display_avatar.url)
         embed.add_field(
             name=EMPTY_CHARACTER,
-            value=f"[Invite EpicBot]({WEBSITE_LINK}/invite) | [Vote EpicBot]({WEBSITE_LINK}/vote) | [Support Server]({SUPPORT_SERVER_LINK})",
+            value=f"[Invite Me]({WEBSITE_LINK}/invite) | [Vote Me]({WEBSITE_LINK}/vote) | [Support Server]({SUPPORT_SERVER_LINK})",
             inline=False
         )
         main = ""
@@ -658,7 +658,7 @@ Make sure to upload image as an attachment.
             return await msg.edit(
                 content="You got rejected!",
                 embed=discord.Embed(
-                    title="<a:cute_cry:868791322574745600>",
+                    title="😭",
                     description=f"**{user.name}** denied your proposal :(",
                     color=RED_COLOR
                 ).set_image(url="https://media1.tenor.com/images/79b965bb99fd58b94d2550b384093e75/tenor.gif?itemid=13668435"
@@ -687,7 +687,7 @@ Make sure to upload image as an attachment.
             return await ctx.reply(f"{EMOJIS['tick_no']}You are not married to anyone.")
         view = Confirm(context=ctx)
         msg = await ctx.reply(embed=discord.Embed(
-            title="<a:cute_cry:868791322574745600>",
+            title="🧐",
             description=f"Do you really want to divorce <@{user_profile.married_to}> :(",
             color=RED_COLOR
         ),
@@ -702,7 +702,7 @@ Make sure to upload image as an attachment.
         await self.client.update_user_profile_(user_profile.married_to, married_to=None, married_at=None)
         return await msg.edit(
             embed=discord.Embed(
-                title="<a:cute_cry:868791322574745600>",
+                title="😭",
                 description=f"Your marriage lasted **{format_timespan(round(time.time()) - time_)}**",
                 color=RED_COLOR
             ).set_image(url="https://media1.tenor.com/images/79b965bb99fd58b94d2550b384093e75/tenor.gif?itemid=13668435"),
