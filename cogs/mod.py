@@ -64,7 +64,7 @@ class AntiAltsSelectionView(discord.ui.View):
         discord.SelectOption(
             label="Level 03",
             description="Ban the suspect from the server.",
-            value='3', emoji='<a:diamond:862594390256910367>'
+            value='3', emoji='<a:uwu_bean:961228467087765574>'
         ),
     ])
     async def callback(self, select: discord.ui.Select, interaction: discord.Interaction):
