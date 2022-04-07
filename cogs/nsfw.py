@@ -124,7 +124,7 @@ class nsfw(commands.Cog, description="Oh boi..."):
     @commands.command(help="Blowjob...")
     async def blowjob(self, ctx: commands.Context):
         embed = await self.get_image_from_api("https://purrbot.site/api/img/nsfw/blowjob/gif", "link")
-        embed.title = "Yummy! 😋"
+        embed.title = "<a:uwu_bean:961228467087765574>"
         await ctx.send(embed=embed)
 
     @commands.cooldown(1, 5, commands.BucketType.user)
@@ -132,7 +132,7 @@ class nsfw(commands.Cog, description="Oh boi..."):
     @commands.command(help="Pussies...")
     async def pussy(self, ctx: commands.Context):
         embed = await self.get_image_from_api("https://nekos.life/api/v2/img/pussy", "url")
-        embed.title = "Yummy! 😋"
+        embed.title = "<a:uwu_bean:961228467087765574>"
         await ctx.send(embed=embed)
 
 
