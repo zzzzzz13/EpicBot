@@ -104,12 +104,12 @@ class config(commands.Cog, description="Configure your server with amazing EpicB
             webhooks = await channel.webhooks()
         except Exception:
             return False
-        webhook = discord.utils.get(webhooks, name="EpicBot Autoposting", user=self.client.user)
+        webhook = discord.utils.get(webhooks, name="Cheemss Autoposting", user=self.client.user)
         if not webhook:
             try:
                 webhook = await channel.create_webhook(
-                    name="EpicBot Autoposting",
-                    reason="EpicBot Autoposting!"
+                    name="Cheemss Autoposting",
+                    reason="Cheemss Autoposting!"
                 )
             except Exception:
                 return False
