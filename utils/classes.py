@@ -4,7 +4,7 @@ from typing import Dict, Optional, Union
 
 @dataclass
 class Profile:
-    """User profile class for EpicBot's profile system."""
+    """User profile class for profile system. Cheems <3"""
 
     # basic stuff
     _id: int
