@@ -27,11 +27,11 @@ MONGO_DB_URL = os.environ.get("MONGO")  # your mongodb database connection url s
 MONGO_DB_URL_BETA = os.environ.get("MONGO_BETA")  # database for the beta bot (optional)
 DB_UPDATE_INTERVAL = 300  # the interval at which the database is updated
 
-PREFIX = "e!"  # the default prefix for the bot
-OWNERS = [558861606063308822]  # the bot owners
-COOLDOWN_BYPASS = [558861606063308822, 344313283714613248, 679677267164921866]  # the users that bypass the cooldown
-EPICBOT_GUILD_ID = 746202728031584358  # the id of the epicbot guild
-PREMIUM_GUILDS = [746202728031584358, 749996055369875456, 876751925859725332]  # the ids of the premium guilds (it bypasses some cmd requirements)
+PREFIX = "c!"  # the default prefix for the bot
+OWNERS = [928620885944983623]  # the bot owners
+COOLDOWN_BYPASS = [928620885944983623, 928620885944983623, 928620885944983623]  # the users that bypass the cooldown
+EPICBOT_GUILD_ID = 944285798772117524  # the id of the epicbot guild
+PREMIUM_GUILDS = [944285798772117524, 944285798772117524, 944285798772117524]  # the ids of the premium guilds (it bypasses some cmd requirements)
 
 # AFK KEYS
 
@@ -48,7 +48,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY")
 
 # SECRET LOGS HEHE :3
 
-ONLINE_LOG_CHANNEL = 757168151141285929
+ONLINE_LOG_CHANNEL = 960824177139548170
 SHARD_LOG_CHANNEL = 832645114459324507
 ADD_REMOVE_LOG_CHANNEL = 793832499645644800
 DATABASE_LOG_CHANNEL = 832645226799300609
@@ -83,45 +83,45 @@ INVISIBLE_COLOR = 0x36393F
 
 # LINK
 
-WEBSITE_LINK = "https://epic-bot.com"
-SUPPORT_SERVER_LINK = "https://discord.gg/Zj7h8Fp"
-INVITE_BOT_LINK = "https://discord.com/oauth2/authorize?client_id=751100444188737617&scope=bot&permissions=2146958847"
-VOTE_LINK = "https://top.gg/bot/751100444188737617/vote"
+WEBSITE_LINK = "https://soon.tk"
+SUPPORT_SERVER_LINK = "https://dsc.gg/cheems-support"
+INVITE_BOT_LINK = "https://dsc.gg/cheems-invite"
+VOTE_LINK = "https://top.gg/"
 
 # ROLES
 
-BOT_MOD_ROLE = 857146993464967169
-OWNER_ROLE = 746202728375648267
-SUPPORTER_ROLE = 842241145584484362
-PARTNER_ROLE = 785404547883204608
-STAFF_ROLE = 764425511707344928
-BOOSTER_ROLE = 787336331474370563
-DESIGN_HELPER_ROLE = 856100670780342272
-VIP_ROLE = 746202728031584366
+BOT_MOD_ROLE = 944286406988161046
+OWNER_ROLE = 944286406988161046
+SUPPORTER_ROLE = 961210631682404352
+PARTNER_ROLE = 961210803489497130
+STAFF_ROLE = 961209796688760842
+BOOSTER_ROLE = 947931107423318056
+DESIGN_HELPER_ROLE = 961209796688760842
+VIP_ROLE = 953959223937630248
 
 # EMOJIS
 
 BADGE_EMOJIS = {
-    "normie": "<:members:853203090001887232>",
-    "cutevi": "<:avi:875400894919872562>",
-    "bot_mod": "<:certifiedmod:857158455269130242>",
+    "normie": "<:members:952237483553341470>",
+    "cutevi": "<a:FN_cutekitten:961211767495725087>",
+    "bot_mod": "<a:pepemod:961211900409036821>",
     "owner_of_epicness": "👑",
-    "staff_member": "<:staff:857194745289113641>",
-    "supporter": "<:Heawt:802801495153967154>",
-    "booster": "<:CB_boosting24month:857196485778866177>",
-    "partner": "<:DiscordPartnerBG:857195796051132416>",
-    "bug_hunter": "<:bughunter:857188620678201375>",
-    "elite_bug_hunter": "<:DiscordGoldBug:857188634478641173>",
-    "early_supporter": "<:supporter:857190710487154698>",
-    "Big_PP": "<a:jerk:857215645431103489>",
-    "No_PP": "<:ppgone:857198841320964106>",
+    "staff_member": "<a:pepestaff:961212131418710016>",
+    "supporter": "<:Rudra_ka_full_sapot:960896042876940318>",
+    "booster": "<a:PepeBoostt:961212491118034944>",
+    "partner": "<:partners:961211114690080769>",
+    "bug_hunter": "<:spy_bughunter:961212632457678908>",
+    "elite_bug_hunter": "<:spy_bughunter:961212632457678908>",
+    "early_supporter": "<a:spy_early:961212815148990535>",
+    "Big_PP": "<:happy:961213148700999721>",
+    "No_PP": "<:happy:961213148700999721>",
     "aw||oo||sh": "<a:PetAwish:819234104817877003>",
     "wendo": "<a:MH_wii_clap:857201084727689246>",
     "cat": "<a:CatRainbowJam:857201249447444530>",
     "best_streamer": "<:RamHeart:851480978668781648>",
     "voter": "<:upvote:857205463350116353>",
     "cutie": "<:mmm:834782050006466590>",
-    "helper": "<:thanks:800741855805046815>",
+    "helper": "<:FN_HelperBadge:961213319681802250>",
     "savior": "🙏",
     "very_good_taste": "<a:petartorol:857212043375280160>",
     "samsung_girl": "<:catgirlboop:857213250512879626>",
@@ -129,24 +129,24 @@ BADGE_EMOJIS = {
     "designer": "🎨",
 }
 EMOJIS = {
-    'heawt': '<:Heawt:802801495153967154> ',
-    'loading': '<a:loading:820988150813949982> ',
-    'hacker_pepe': '<a:Hackerman:832863861975154698> ',
-    # 'tick_yes': '<:tickYes:828260365908836423> ',
-    'tick_yes': '<:ok:857098227944652801> ',  # '<a:EpicTik:766172079179169813> ',
-    # 'tick_no': '<:tickNo:828262032495214643> ',
-    'tick_no': '<:EpicCross:782551854662942741> ',
-    'wave_1': '<:CB_wave:835817344172687370> ',
-    'shy_uwu': '<:shy_uwu:836452300179374111> ',
-    'add': '<:EpicRemove:771674521731989536> ',
-    'remove': '<:EpicAdd:771674521471549442> ',
-    'pepe_jam': '<a:pepeJAM:836819694002372610> ',
-    'pog_stop': '<:PC_PogStop:836870370027503657> ',
-    'catjam': '<a:1CatJam:836896091014037555> ',
+    'heawt': '<:happy:961213148700999721> ',
+    'loading': '<:happy:961213148700999721> ',
+    'hacker_pepe': '<:happy:961213148700999721> ',
+    # 'tick_yes': '👍 ',
+    'tick_yes': '👍 ',  # '👎 ',
+    # 'tick_no': '👎 ',
+    'tick_no': '👎 ',
+    'wave_1': '<a:kannawave:961228276477599774> ',
+    'shy_uwu': '<a:uwu_bean:961228467087765574> ',
+    'add': '<:happy:961213148700999721> ',
+    'remove': '<:happy:961213148700999721> ',
+    'pepe_jam': '<:happy:961213148700999721> ',
+    'pog_stop': '<:happy:961213148700999721> ',
+    'catjam': '<:CH_CatBlushy:961213636506943548> ',
     'epic_coin': '<:epiccoin:837959671532748830> ',
-    'bruh': '<:PogBruh:838345056154812447> ',
-    'mmm': '<:mmm:842687641639452673> ',
-    'sleepy': '<:CB_sleepy:830641591394893844> ',
+    'bruh': '<:CH_CatBlushy:961213636506943548> ',
+    'mmm': '<:CH_CatBlushy:961213636506943548> ',
+    'sleepy': '<:CH_CatBlushy:961213636506943548> ',
     'muted': '<:muted:843472761342132294> ',
     'unmuted': '<:unmuted:843488852063682582> ',
     'reminder': '⏰ ',
@@ -169,26 +169,26 @@ EMOJIS = {
     'dnd': '<:status_dnd:862600241851924480> ',
     'arrow': '<:Arrow:869101378822373417> ',
     'reaction': '<:add_reaction:873891867610210304> ',
-    'cmd_arrow': '<:join_arrow:876313929402417172> ',
+    'cmd_arrow': '<a:GF_Little_Pretty_Star_Pink:951513061930434610> ',
     'youtube': '<:YoutubeLogo:884650525117792316> ',
-    'cry_': '<a:cry_:887173073630015508> '
+    'cry_': '<a:cry_:887173073630015508>'
 }
 EMOJIS_FOR_COGS = {
     'actions': '<a:hugs:839739273083224104>',
     'emojis': '<a:cool:844813588476854273>',
     'fun': '<a:laugh:849534486869442570>',
-    'games': '🎮',
+    'games': '<a:sapinkkawaiigamer:961229171168776192>',
     'image': '📸',
-    'info': '<:info:849534946170241034>',
-    'leveling': '<a:leveling:849535096838815775>',
-    'misc': '<a:PetEpicBot:797142108611280926>',
-    'mod': '🛠️',
-    'music': '<a:music:849539543103569941>',
+    'info': 'ℹ️',
+    'leveling': '😺',
+    'misc': '<:p_badge_TKG:961229361393061898>',
+    'mod': '<:p_badge_TKG:961229361393061898>',
+    'music': '<:02_zeromusic:961230135682560000>',
     'nsfw': '🔞',
-    'config': '<:settings:825008012867534928>',
+    'config': '<a:D_CAFE_SETTINGS:952237985984835704>',
     'starboard': '⭐',
     'utility': '🔧',
-    'user': '<:EpicMembers:794075799422238720>',
+    'user': ':<members:952237483553341470>',
     'notifications': '🔔',
     'custom': EMOJIS['settings_color'][:-1],
 }
@@ -234,7 +234,7 @@ CREDITS_CONTRIBUTORS = {
 
 # PP
 
-BIG_PP_GANG = [558861606063308822, 344313283714613248, 478623992337530883, 541410668117753876]
+BIG_PP_GANG = [724859002646823032, 532177714203852800, 791580073190621205, 928620885944983623]
 NO_PP_GANG = [550083219136053259, 729770314388603020]
 
 # SOME RANDOM STUFF
