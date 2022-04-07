@@ -435,9 +435,7 @@ Members: {len(role.members)}
 - [Website]({WEBSITE_LINK})
 - [Support]({SUPPORT_SERVER_LINK})
 - [Invite]({INVITE_BOT_LINK})
-- [Vote]({WEBSITE_LINK}/vote)
-- [Github](https://github.com/nirlep5252/epicbot)
-            """,
+- [Vote]({WEBSITE_LINK}/vote)            """,
             inline=True
         ).set_footer(text=self.client.user.name, icon_url=self.client.user.display_avatar.url
         ).set_author(name=self.client.user.name, icon_url=self.client.user.display_avatar.url
