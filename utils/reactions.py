@@ -11,7 +11,7 @@ async def prepare_rolemenu(ctx: Context, stuff: dict, channel: TextChannel, type
         if role is not None:
             text += f"{emoji} - {role.mention}\n"
     embed = success_embed(
-        "Rolemenu - Get your roles!",
+        "Rolemenu - Grab Your roles!",
         text
     )
     if type_ == 'reaction':
