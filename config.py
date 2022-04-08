@@ -219,17 +219,7 @@ THINKING_EMOJI_URLS = [
 # CREDITS
 
 CREDITS_CONTRIBUTORS = {
-    "Mr Potato": ["MrPotato374", "Staff, Supporter, Helper"],
-    "ELEXR": ["ELEXR", "Supporter, Helper"],
-    "Sengolda": ["Sengolda", "Helper"],
-    "QuantumGamerLive": ["QuantumGamerLive", "Helper"],
-    "TheUndeadBowman": ["TheUndeadBowman", "Staff, Supporter, Helper"],
-    "CAT": ["KittyKart", "Supporter, Helper"],
-    "Vishal": ["imkrvishal", "Helper"],
-    "Crafterzman": ["Craftzman7", "Helper"],
-    "Motzumoto": ["Motzumoto", "Helper"],
-    "Windows": ["WindowsCmd", "Helper"],
-    "Nek": ["NekWasTaken", "Helper"],
+    "reef": ["reef1447", "Staff"]
 }
 
 # PP
