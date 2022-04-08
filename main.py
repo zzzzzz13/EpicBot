@@ -20,7 +20,49 @@ from config import BOT_TOKEN, BOT_TOKEN_BETA, OWNERS
 from utils.bot import EpicBot
 from os import environ
 from handler import InteractionClient
+import os
 
+from discord.ext import commands
+
+from discord.gateway import DiscordWebSocket
+
+class MyDiscordWebSocket(DiscordWebSocket):
+
+    async def send_as_json(self, data):
+
+        if data.get('op') == self.IDENTIFY:
+
+            if data.get('d', {}).get('properties', {}).get('$browser') is not None:
+
+                data['d']['properties']['$browser'] = 'Discord Android'
+
+                data['d']['properties']['$device'] = 'Discord Android'
+
+        await super().send_as_json(data)
+
+DiscordWebSocket.from_client = MyDiscordWebSocket.from_client
+
+import os
+
+from discord.ext import commands
+
+from discord.gateway import DiscordWebSocket
+
+class MyDiscordWebSocket(DiscordWebSocket):
+
+    async def send_as_json(self, data):
+
+        if data.get('op') == self.IDENTIFY:
+
+            if data.get('d', {}).get('properties', {}).get('$browser') is not None:
+
+                data['d']['properties']['$browser'] = 'Discord Android'
+
+                data['d']['properties']['$device'] = 'Discord Android'
+
+        await super().send_as_json(data)
+
+DiscordWebSocket.from_client = MyDiscordWebSocket.from_client
 basicConfig(level=INFO)
 
 client = EpicBot()
