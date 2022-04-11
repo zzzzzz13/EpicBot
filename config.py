@@ -174,24 +174,23 @@ EMOJIS = {
     'cry_': '<a:cry_:887173073630015508>'
 }
 EMOJIS_FOR_COGS = {
-    'actions': '😺',
-    'emojis': '🪡',
-    'fun': '😂',
-    'games': '🃏',
-    'image': '❤️‍🩹',
-    'info': 'ℹ️',
-    'leveling': '🕶️',
-    'misc': '🚀',
-    'mod': '🛡️',
-    'music': '🎧',
+    'actions': '<a:hugs:839739273083224104>',
+    'emojis': '<a:cool:844813588476854273>',
+    'fun': '<a:laugh:849534486869442570>',
+    'games': '🎮',
+    'image': '📸',
+    'info': '<:info:849534946170241034>',
+    'leveling': '<a:leveling:849535096838815775>',
+    'misc': '<a:PetEpicBot:797142108611280926>',
+    'mod': '🛠️',
+    'music': '<a:music:849539543103569941>',
     'nsfw': '🔞',
-    'config': '🎛️',
+    'config': '<:settings:825008012867534928>',
     'starboard': '⭐',
     'utility': '🔧',
-    'user': '👬',
+    'user': '<:EpicMembers:794075799422238720>',
     'notifications': '🔔',
     'custom': EMOJIS['settings_color'][:-1],
-
 }
 CUTE_EMOJIS = [
     "<:shy:844039614032904222>",
