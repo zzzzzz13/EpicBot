@@ -37,7 +37,7 @@ async def get_cog_help(ctx: commands.Context, cog_name: str) -> discord.Embed:
         description="**Here are all the commands:**\n\n" + "\n".join([f"{EMOJIS['cmd_arrow']} `{e.name}` • {e.help}" for e in cog.get_commands()]),
         color=MAIN_COLOR
     ).set_thumbnail(url=ctx.bot.user.display_avatar.url
-    ).add_field(name=EMPTY_CHARACTER, value=f"[Invite EpicBot]({WEBSITE_LINK}/invite) | [Vote EpicBot]({WEBSITE_LINK}/vote) | [Support Server]({SUPPORT_SERVER_LINK})", inline=False)
+    ).add_field(name=EMPTY_CHARACTER, value=f"[Invite Cheems]({WEBSITE_LINK}/invite) | [Vote Cheems]({WEBSITE_LINK}/vote) | [Support Server]({SUPPORT_SERVER_LINK})", inline=False)
 
 
 async def get_command_help(ctx: commands.Context, command_name: str) -> discord.Embed:
@@ -64,7 +64,7 @@ async def get_command_help(ctx: commands.Context, command_name: str) -> discord.
     ).set_footer(text=f"Requested by {ctx.author}", icon_url=ctx.author.display_avatar.url
     ).set_author(name=ctx.bot.user.name, icon_url=ctx.bot.user.display_avatar.url
     ).set_thumbnail(url=ctx.bot.user.display_avatar.url
-    ).add_field(name=EMPTY_CHARACTER, value=f"[Invite EpicBot]({WEBSITE_LINK}/invite) | [Vote EpicBot]({WEBSITE_LINK}/vote) | [Support Server]({SUPPORT_SERVER_LINK})", inline=False)
+    ).add_field(name=EMPTY_CHARACTER, value=f"[Invite Cheems | [Vote Cheems]({WEBSITE_LINK}/vote) | [Support Server]({SUPPORT_SERVER_LINK})", inline=False)
 
 
 async def get_bot_help(ctx: commands.Context, mapping: Mapping[Optional[commands.Cog], List[commands.Command]]) -> discord.Embed:
@@ -106,7 +106,7 @@ async def get_commands_list(ctx: commands.Context, mapping) -> discord.Embed:
                 inline=False
             )
     embed.add_field(name="Links:", value=f"""
-[Dashboard]({WEBSITE_LINK}) | [Support]({SUPPORT_SERVER_LINK}) | [Invite]({WEBSITE_LINK}/invite) 
+[Dashboard]({WEBSITE_LINK}) | [Support]({SUPPORT_SERVER_LINK}) | [Invite]({WEBSITE_LINK}/invite)
     """, inline=False)
 
     return embed
@@ -145,14 +145,14 @@ class HelpMenu(discord.ui.View):
         embed = await get_commands_list(self.ctx, self.mapping)
         await interaction.message.edit(embed=embed, view=self)
 
-    @discord.ui.button(label="Delete Menu", emoji='🛑', style=discord.ButtonStyle.danger)
+    @discord.ui.button(label="Delete Menu", emoji='', style=discord.ButtonStyle.danger)
     async def delete_menu(self, button: discord.ui.Button, interaction: discord.Interaction):
         await interaction.message.delete()
 
     async def interaction_check(self, interaction: discord.Interaction):
         if interaction.user == self.ctx.author:
             return True
-        await interaction.response.send_message("Not your command ._.", ephemeral=True)
+        await interaction.response.send_message("Use Your Own Help menu Bruh", ephemeral=True)
 
 
 class EpicBotHelp(commands.HelpCommand):
