@@ -149,7 +149,7 @@ EMOJIS = {
     'sleepy': '<:CB_sleepy:830641591394893844> ',
     'muted': '<:muted:843472761342132294> ',
     'unmuted': '<:unmuted:843488852063682582> ',
-    'reminder': '⏰ ',
+    'reminder': '⏰',
     'cool': '<a:cool:844813588476854273> ',
     'settings': '<:settings:825008012867534928> ',
     'settings_color': '<a:settings_color:848495459882237962> ',
