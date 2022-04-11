@@ -268,7 +268,7 @@ class image(commands.Cog, description="Cool image commands!"):
                 memes.flex_tape,
                 "Leaving the command empty",
                 "Please type some sentences while using this command",
-                "EpicBot"
+                "cheems"
             ))
             return await ctx.reply(file=discord.File(path))
         thingies = sentences.split(',', 1)
@@ -278,7 +278,7 @@ class image(commands.Cog, description="Cool image commands!"):
                 memes.flex_tape,
                 "Someone doesn't know how to use the flex tape command",
                 "Please put 2 sentences seperated with a comma",
-                "EpicBot"
+                "cheems"
             ))
             return await ctx.reply(file=discord.File(path))
         if len(thingies[0]) > 100 or len(thingies[1]) > 100:
