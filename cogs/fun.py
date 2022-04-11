@@ -288,7 +288,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
         view = FreeNitroView(ctx)
         time_to_fool_u = discord.Embed(
             title="You've been gifted a subscription!",
-            description=f"You've been gifted Nitro for **1 Month!**\nExpires in **24 hours**\n\n[**Disclaimer**]({WEBSITE_LINK}/disclaimer)",
+            description=f"You've been gifted Nitro for **1 Month!**\nExpires in **24 hours**\n\n[**Invite For More Nitro**](https://dsc.gg/cheems-invite)",
             color=INVISIBLE_COLOR
         ).set_thumbnail(url="https://media.discordapp.net/attachments/895163964361674752/895982514093555763/images_1_-_2021-10-08T160355.540.jpeg")
         await ctx.send(embed=time_to_fool_u, view=view)
@@ -298,7 +298,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
         if message.author.bot:
             return
         user_profile = await self.client.get_user_profile_(message.author.id)
-        if not user_profile.snipe:
+        if not user_profile['snipe']:
             return
         msg_attachments = []
         for attachment in message.attachments:
@@ -328,7 +328,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
         if before.content == after.content and len(before.attachments) == 0:
             return
         user_profile = await self.client.get_user_profile_(before.author.id)
-        if not user_profile.snipe:
+        if not user_profile['snipe']:
             return
         msg_attachments = []
         for attachment in before.attachments:
@@ -358,7 +358,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
             return
         if not before.author.bot:
             user_profile = await self.client.get_user_profile_(before.author.id)
-            if not user_profile.snipe:
+            if not user_profile['snipe']:
                 return
         self.embed_snipes.update({before.channel.id: {
             "before": before.embeds,
@@ -830,8 +830,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
             ))
 
         user_profile = await self.client.get_user_profile_(user.id)
-        stuff = {"times_simped": user_profile.times_simped + 1}
-        await self.client.update_user_profile_(user.id, **stuff)
+        user_profile.update({"times_simped": user_profile['times_simped'] + 1})
 
         embed = discord.Embed(
             title="Wow, what a simp!",
@@ -839,7 +838,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
 **{escape_markdown(ctx.author.name)}** is now simping for **{escape_markdown(user.name)}**.
                         """,
             color=PINK_COLOR_2
-        ).set_footer(text=f"They now have {user_profile.times_simped + 1} simp{'s' if user_profile.times_simped != 1 else ''}!"
+        ).set_footer(text=f"They now have {user_profile['times_simped']} simp{'s' if user_profile['times_simped'] != 1 else ''}!"
         ).set_thumbnail(url="https://cdn.discordapp.com/emojis/799530519557177374.png")
         await ctx.reply(embed=embed)
 
@@ -1012,7 +1011,7 @@ Another Example: `{prefix}shouldi Study OR Procrastinate`
         if question is None:
             ctx.command.reset_cooldown(ctx)
             return await ctx.message.reply(embed=error_embed("Bruh!", "Please enter a question!"))
-        responses = ['Yes. <a:EpicTick:760828595823837194>', 'No. <a:EpicCross:760830174207016980>', 'Probably. ', 'Maybe.', 'IDK bro ', 'Seems like it.', 'Nahh.', 'Oh hell yeah.', 'Yes Definitely.', 'I Think not', 'lol no bro', 'Concentrate and ask again', 'Ask a better question lol', 'Umm Yes', 'Umm No', 'Yes lmao', 'No, but imagine if it was yes lol', 'Yes, but imagine if it was no lol', 'hmm, good question', 'Yes, obviously', 'Definitely not']
+        responses = ['Yes. ', 'No.', 'nahhhh', 'Probably. ', 'Maybe.', 'IDK bro ', 'Seems like it.', 'Nahh.', 'Oh hell yeah.', 'Yes Definitely.', 'I Think not', 'lol no bro', 'Concentrate and ask again', 'Ask a better question lol', 'Umm Yes', 'Umm No', 'Yes lmao', 'No, but imagine if it was yes lol', 'Yes, but imagine if it was no lol', 'hmm, good question', 'Yes, obviously', 'Definitely not']
         await ctx.message.reply(embed=discord.Embed(description="🎱 " + random.choice(responses), color=MAIN_COLOR))
 
     @commands.cooldown(1, 5, commands.BucketType.user)
