@@ -190,7 +190,8 @@ EMOJIS_FOR_COGS = {
     'utility': '🔧',
     'user': '👬',
     'notifications': '🔔',
-    'custom': EMOJIS['🤧'][:-1],
+    'custom': EMOJIS['settings_color'][:-1],
+
 }
 CUTE_EMOJIS = [
     "<:shy:844039614032904222>",
