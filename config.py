@@ -27,7 +27,7 @@ MONGO_DB_URL = os.environ.get("MONGO")  # your mongodb database connection url s
 MONGO_DB_URL_BETA = os.environ.get("MONGO_BETA")  # database for the beta bot (optional)
 DB_UPDATE_INTERVAL = 300  # the interval at which the database is updated
 
-PREFIX = "c!"  # the default prefix for the bot
+PREFIX = "C!"  # the default prefix for the bot
 OWNERS = [928620885944983623]  # the bot owners
 COOLDOWN_BYPASS = [928620885944983623, 928620885944983623, 928620885944983623]  # the users that bypass the cooldown
 EPICBOT_GUILD_ID = 944285798772117524  # the id of the epicbot guild
@@ -97,7 +97,7 @@ PARTNER_ROLE = 961210803489497130
 STAFF_ROLE = 961209796688760842
 BOOSTER_ROLE = 947931107423318056
 DESIGN_HELPER_ROLE = 961209796688760842
-VIP_ROLE = 953959223937630248
+VIP_ROLE = 963117982089883689
 
 # EMOJIS
 
@@ -105,7 +105,7 @@ BADGE_EMOJIS = {
     "normie": "<:members:952237483553341470>",
     "cutevi": "<a:FN_cutekitten:961211767495725087>",
     "bot_mod": "<a:pepemod:961211900409036821>",
-    "owner_of_epicness": "👑",
+    "owner_of_epicness": "<a:info:961657006287106059>",
     "staff_member": "<a:pepestaff:961212131418710016>",
     "supporter": "<:Rudra_ka_full_sapot:960896042876940318>",
     "booster": "<a:PepeBoostt:961212491118034944>",
@@ -190,7 +190,7 @@ EMOJIS_FOR_COGS = {
     'utility': '🔧',
     'user': '👬',
     'notifications': '🔔',
-    'custom': EMOJIS[🤧'][:-1],
+    'custom': EMOJIS['🤧'][:-1],
 }
 CUTE_EMOJIS = [
     "<:shy:844039614032904222>",
