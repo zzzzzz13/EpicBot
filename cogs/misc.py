@@ -1,17 +1,17 @@
 """
-Copyright 2021 Nirlep_5252_
+copyright 2021 nirlep_5252_
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+licensed under the apache license, version 2.0 (the "license");
+you may not use this file except in compliance with the license.
+you may obtain a copy of the license at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/license-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+unless required by applicable law or agreed to in writing, software
+distributed under the license is distributed on an "as is" basis,
+without warranties or conditions of any kind, either express or implied.
+see the license for the specific language governing permissions and
+limitations under the license.
 """
 
 import discord
@@ -20,19 +20,19 @@ import humanfriendly
 
 from utils.embed import error_embed, success_embed
 from discord.ext import commands
-from config import EMOJIS, MAIN_COLOR, WEBSITE_LINK, SUPPORT_SERVER_LINK, CREDITS_CONTRIBUTORS, start_time, SUGGESTION_CHANNEL, BUG_REPORT_CHANNEL
-from utils.bot import EpicBot
+from config import emojis, main_color, website_link, support_server_link, credits_contributors, start_time, suggestion_channel, bug_report_channel
+from utils.bot import epicbot
 
 
-class misc(commands.Cog, description="Commands mostly related to the bot!"):
-    def __init__(self, client: EpicBot):
+class misc(commands.cog, description="commands mostly related to the bot!"):
+    def __init__(self, client: epicbot):
         self.client = client
 
-    @commands.cooldown(1, 5, commands.BucketType.user)
-    @commands.command(category="misc", help="Check bot's ping.")
+    @commands.cooldown(1, 5, commands.buckettype.user)
+    @commands.command(category="misc", help="check my ping.")
     async def ping(self, ctx):
         time1 = time.perf_counter()
-        msg = await ctx.message.reply(embed=discord.Embed(title=f"Pinging... {EMOJIS['loading']}", color=MAIN_COLOR))
+        msg = await ctx.message.reply(embed=discord.embed(title=f"pinging... {emojis['loading']}", color=main_color))
         time2 = time.perf_counter()
 
         db_time1 = time.perf_counter()
@@ -41,18 +41,18 @@ class misc(commands.Cog, description="Commands mostly related to the bot!"):
 
         shard_text = ""
         for shard, latency in self.client.latencies:
-            shard_text += f"Shard {shard}" + ' ' * (3 - len(str(shard))) + f': {round(latency*1000)}ms\n'
+            shard_text += f"shard {shard}" + ' ' * (3 - len(str(shard))) + f': {round(latency*1000)}ms\n'
 
         embed = success_embed(
-            "🏓  Pong!",
+            "🏓  pong!",
             f"""
-**Basic:**
+**basic:**
 ```yaml
-API      : {round(self.client.latency*1000)}ms
-Bot      : {round((time2-time1)*1000)}ms
-Database : {round((db_time2-db_time1)*1000)}ms
+api      : {round(self.client.latency*1000)}ms
+bot      : {round((time2-time1)*1000)}ms
+database : {round((db_time2-db_time1)*1000)}ms
 ```
-**Shards:**
+**shards:**
 ```yaml
 {shard_text}
 ```
@@ -60,132 +60,131 @@ Database : {round((db_time2-db_time1)*1000)}ms
         ).set_thumbnail(url=self.client.user.display_avatar.url)
         await msg.edit(embed=embed)
 
-    @commands.cooldown(1, 2, commands.BucketType.user)
-    @commands.command(category="misc", help="Invite EpicBot to your amazing server!")
+    @commands.cooldown(1, 2, commands.buckettype.user)
+    @commands.command(category="misc", help="invite cheems to your amazing server!")
     async def invite(self, ctx):
-        await ctx.message.reply(embed=discord.Embed(
-            title="Invite me :D \💖",
-            description="Thank you so much!",
-            color=MAIN_COLOR,
+        await ctx.message.reply(embed=discord.embed(
+            title="invite cheems \💖",
+            description="thank you so much!",
+            color=main_color,
             url=f"https://discord.com/oauth2/authorize?client_id={self.client.user.id}&permissions=8&scope=bot%20applications.commands"
-        ).set_footer(text="UwU"))
+        ).set_footer(text="uwu"))
 
-    @commands.cooldown(1, 2, commands.BucketType.user)
-    @commands.command(category="misc", help="Vote EpicBot to gain perks!")
+    @commands.cooldown(1, 2, commands.buckettype.user)
+    @commands.command(category="misc", help="vote cheems to gain perks!")
     async def vote(self, ctx):
-        await ctx.message.reply(embed=discord.Embed(
-            title="Vote me :D \💖",
+        await ctx.message.reply(embed=discord.embed(
+            title="vote cheems \💖",
             description=f"""
-You can vote for me on these links:
+you can vote for me on these links:
 
 - [top.gg](https://top.gg/bot/{self.client.user.id}/vote)
 - [bots.discordlabs.org](https://bots.discordlabs.org/bot/{self.client.user.id}/vote)
 - [discordbotlist.com](https://discordbotlist.com/bots/{self.client.user.id}/upvote)
             """,
-            color=MAIN_COLOR,
-        ).set_footer(text="I love you!"))
+            color=main_color,
+        ).set_footer(text="i love you!"))
 
-    @commands.cooldown(1, 2, commands.BucketType.user)
-    @commands.command(category="misc", aliases=['discord'], help="Join EpicBot's support server.")
+    @commands.cooldown(1, 2, commands.buckettype.user)
+    @commands.command(category="misc", aliases=['discord'], help="join cheems's support server.")
     async def support(self, ctx):
-        await ctx.message.reply(SUPPORT_SERVER_LINK)
+        await ctx.message.reply(support_server_link)
 
-    @commands.cooldown(1, 5, commands.BucketType.user)
-    @commands.command(category="misc", help="Check EpicBot's uptime.")
+    @commands.cooldown(1, 5, commands.buckettype.user)
+    @commands.command(category="misc", help="check cheems's uptime.")
     async def uptime(self, ctx):
-        await ctx.message.reply(embed=discord.Embed(
-            title="Uptime",
-            description=f"I have been up for **{humanfriendly.format_timespan(round(time.time()-start_time))}**",
-            color=MAIN_COLOR
+        await ctx.message.reply(embed=discord.embed(
+            title="uptime",
+            description=f"i have been up for **{humanfriendly.format_timespan(round(time.time()-start_time))}**",
+            color=main_color
         ))
 
-    @commands.cooldown(1, 5, commands.BucketType.user)
-    @commands.command(category="misc", help="Credits to our contributors and helpers!")
+    @commands.cooldown(1, 5, commands.buckettype.user)
+    @commands.command(category="misc", help="credits to our contributors and helpers!")
     async def credits(self, ctx):
         contributors = ""
-        for e in CREDITS_CONTRIBUTORS:
-            contributors += f"- [`{e}`](https://github.com/{CREDITS_CONTRIBUTORS[e][0]}) - {CREDITS_CONTRIBUTORS[e][1]}\n"
-        await ctx.message.reply(embed=discord.Embed(
-            title="Credits",
-            description="This bot wouldn't have been possible without them!",
-            color=MAIN_COLOR
+        for e in credits_contributors:
+            contributors += f"- [`{e}`](https://github.com/{credits_contributors[e][0]}) - {credits_contributors[e][1]}\n"
+        await ctx.message.reply(embed=discord.embed(
+            title="credits",
+            description="this bot wouldn't have been possible without them!",
+            color=main_color
         ).set_thumbnail(url=self.client.user.display_avatar.url).add_field(
-            name="Owner",
-            value="- [`JovinplayZ`](https://dsc.gg/cheems-invite)",
-            inline=False
+            name="owner",
+            value="- [`jovinpayz`](https://dsc.gg/cheems-invite)",
+            inline=false
         ).add_field(
-            name="Contributors",
+            name="contributors",
             value=contributors,
-            inline=False
+            inline=false
         ).add_field(
-            name="Other Credits",
-            value=""" [Reef] (https://dsc.gg/cheems-invite) - helper ❤️‍🔥
+            name="other credits",
+            value="""
+- [`reef`](https://github.com/reef1447 - setup
             """,
-            inline=False
-        ).set_footer(text="They are amazing 💖"))
+            inline=false
+        ).set_footer(text="they are amazing 💖"))
 
-    @commands.cooldown(1, 5, commands.BucketType.user)
-    @commands.command(category="misc", help="View our privacy policy")
+    @commands.cooldown(1, 5, commands.buckettype.user)
+    @commands.command(category="misc", help="view our privacy policy")
     async def privacy(self, ctx):
-        await ctx.message.reply(f"You can view our privacy policy here {WEBSITE_LINK}/privacy")
+        await ctx.message.reply(f"you can view our privacy policy here {website_link}/privacy")
 
-    @commands.cooldown(3, 120, commands.BucketType.user)
-    @commands.command(category="misc", help="Submit a suggestion!")
-    async def suggest(self, ctx, *, suggestion=None):
+    @commands.cooldown(3, 120, commands.buckettype.user)
+    @commands.command(category="misc", help="submit a suggestion!")
+    async def suggest(self, ctx, *, suggestion=none):
         prefix = ctx.clean_prefix
 
-        if suggestion is None:
+        if suggestion is none:
             ctx.command.reset_cooldown(ctx)
             return await ctx.message.reply(embed=error_embed(
-                f"{EMOJIS['tick_no']} Incorrect Usage!",
-                f"Please use it like this: `{prefix}suggest <suggestion>`"
+                f"{emojis['tick_no']} incorrect usage!",
+                f"please use it like this: `{prefix}suggest <suggestion>`"
             ))
 
         user_profile = await self.client.get_user_profile_(ctx.author.id)
-        stuff = {"suggestions_submitted": user_profile.suggestions_submitted + 1}
-        await self.client.update_user_profile_(ctx.author.id, **stuff)
+        user_profile.update({"suggestions_submitted": user_profile['suggestions_submitted'] + 1})
 
         files = []
         for file in ctx.message.attachments:
             files.append(await file.to_file())
 
-        embed = success_embed("Suggestion!", suggestion
+        embed = success_embed("suggestion!", suggestion
                 ).set_author(name=ctx.author, icon_url=ctx.author.display_avatar.url
-                ).set_footer(text=f"User ID: {ctx.author.id} | Guild ID: {ctx.guild.id}")
+                ).set_footer(text=f"user id: {ctx.author.id} | guild id: {ctx.guild.id}")
 
-        msg = await self.client.get_channel(SUGGESTION_CHANNEL).send(embed=embed, files=files)
+        msg = await self.client.get_channel(suggestion_channel).send(embed=embed, files=files)
         await msg.add_reaction('👍')
         await msg.add_reaction('👎')
         await ctx.reply(embed=success_embed(
-            f"{EMOJIS['tick_yes']} Suggestion submitted!",
-            f"Thank you for submitting the suggestion!\nYou have suggested a total of `{user_profile.suggestions_submitted + 1}` suggestions!"
+            f"{emojis['tick_yes']} suggestion submitted!",
+            f"thank you for submitting the suggestion!\nyou have suggested a total of `{user_profile['suggestions_submitted']}` suggestions!"
         ))
 
-    @commands.cooldown(2, 7200, commands.BucketType.user)
-    @commands.command(category="misc", aliases=['bug'], help="Report a buggie >~<")
-    async def bugreport(self, ctx, *, bug=None):
+    @commands.cooldown(2, 7200, commands.buckettype.user)
+    @commands.command(category="misc", aliases=['bug'], help="report a buggie >~<")
+    async def bugreport(self, ctx, *, bug=none):
         prefix = ctx.clean_prefix
-        if bug is None:
+        if bug is none:
             ctx.command.reset_cooldown(ctx)
-            return await ctx.message.reply(embed=error_embed("Incorrect Usage", f"Please use it like this: `{prefix}bug <bug>`"))
+            return await ctx.message.reply(embed=error_embed("incorrect usage", f"please use it like this: `{prefix}bug <bug>`"))
         user_profile = await self.client.get_user_profile_(ctx.author.id)
-        stuff = {"bugs_reported": user_profile.bugs_reported + 1}
-        await self.client.update_user_profile_(ctx.author.id, **stuff)
-        embed = discord.Embed(
-            title="Bug",
+        user_profile.update({"bugs_reported": user_profile['bugs_reported'] + 1})
+        embed = discord.embed(
+            title="bug",
             description=f"""
 ```
 {bug}
 ```
             """,
-            color=MAIN_COLOR
+            color=main_color
         )
         embed.set_author(name=ctx.author, icon_url=ctx.author.display_avatar.url)
-        embed.set_footer(text=f"User ID: {ctx.author.id} | Guild ID: {ctx.guild.id}")
-        await self.client.get_channel(BUG_REPORT_CHANNEL).send(embed=embed)
+        embed.set_footer(text=f"user id: {ctx.author.id} | guild id: {ctx.guild.id}")
+        await self.client.get_channel(bug_report_channel).send(embed=embed)
         await ctx.reply(embed=success_embed(
-            f"{EMOJIS['tick_yes']} Bug submitted!",
-            f"Thank you for submitting the bug!\nYou have reported a total of `{user_profile.bugs_reported + 1}` bugs"
+            f"{emojis['tick_yes']} bug submitted!",
+            f"thank you for submitting the bug!\nyou have reported a total of `{user_profile['bugs_reported']}` bugs"
         ))
 
 
